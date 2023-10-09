@@ -9,7 +9,7 @@ import Counter from "./components/Counter";
 import useCountdown from "./hooks/useCountDown";
 
 export default function Home() {
-  const [day, hour, minute, second] = useCountdown("Oct 6, 2023 00:00:00");
+  const [day, hour, minute, second] = useCountdown("Oct 6, 2024 00:00:00");
 
   return (
     <>
