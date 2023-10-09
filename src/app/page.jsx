@@ -18,7 +18,7 @@ export default function Home() {
       </Head> */}
       <div className="app">
         <div className="container">
-          <Title title="Contagem regressiva para o B-day da Andreza" />
+          <Title title="Contagem regressiva para o B-day da Andreza 16 anos" />
           <div className="countdown-container">
             <Counter title="Dias" number={day} />
             <Counter title="Horas" number={hour} />
