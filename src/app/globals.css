@@ -5,6 +5,7 @@
 body {
   margin: 0px;
   padding: 0px;
+  font-family: "__Inter_20951f", "__Inter_Fallback_20951f", "Arial";
 }
 
 h1 {
@@ -25,10 +26,6 @@ h1 {
   background-image: url("../../public/andreza2h.jpeg");
   background-position: 0%;
   background-size: cover;
-}
-
-.counterNumber {
-  color: black;
 }
 
 .container {
@@ -64,6 +61,7 @@ h1 {
   font-size: 3rem;
   font-weight: bold;
   min-width: 80px;
+  min-height: 58px;
   margin: 10px;
   text-align: center;
 }
@@ -108,6 +106,7 @@ h1 {
     font-size: 2rem;
     font-weight: bold;
     min-width: 50px;
+    min-height: 38.5px;
     margin: 0px;
     text-align: center;
   }
