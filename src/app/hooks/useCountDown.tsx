@@ -1,18 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const useCountdown = (date: any) => {
+const useCountdown = (initialDate: string, birthYear: number) => {
   const [day, setDay] = useState<number | null>(null);
   const [hour, setHour] = useState<number | null>(null);
   const [minute, setMinute] = useState<number | null>(null);
   const [second, setSecond] = useState<number | null>(null);
+  const [targetDate, setTargetDate] = useState<Date>(new Date(initialDate));
+  const [age, setAge] = useState<number>(new Date().getFullYear() - birthYear);
 
   const countDown = () => {
-    const countDate = new Date(date).getTime();
     const now = new Date().getTime();
+    const countDate = targetDate.getTime();
 
-    const interval = countDate - now;
+    if (now > countDate) {
+      const newTargetDate = new Date(
+        targetDate.setFullYear(targetDate.getFullYear() + 1)
+      );
+      setTargetDate(newTargetDate);
+      setAge((prevAge) => prevAge + 1);
+    }
+
+    const interval = targetDate.getTime() - now;
 
     const second = 1000;
     const minute = second * 60;
@@ -30,9 +40,12 @@ const useCountdown = (date: any) => {
     setSecond(secondNumber);
   };
 
-  setInterval(countDown, 1000);
+  useEffect(() => {
+    const interval = setInterval(countDown, 1000);
+    return () => clearInterval(interval);
+  }, [targetDate]);
 
-  return [day, hour, minute, second];
+  return [day, hour, minute, second, age];
 };
 
 export default useCountdown;

@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Contagem regressiva",
+  title: "Próximo Bday da Andreza",
   description: "Bday da Andreza",
 };
 
